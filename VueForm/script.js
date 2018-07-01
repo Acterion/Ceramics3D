@@ -2,8 +2,8 @@ Vue.component('custom-form', {
     template: '#custom-form',
     props:['fields','url','action'],
     methods: {
-    	sendForm: function(){
-    		//event.preventDefault();
+    	sendForm: function(e){
+    		e.preventDefault();
     		console.log(this.url);
     		var dict = [];
 
