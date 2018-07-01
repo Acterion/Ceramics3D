@@ -1,0 +1,16 @@
+.inputText{
+	width: 200px;
+	height: 25px;
+}
+
+#form-container{
+	border: 1px solid
+}
+
+.container{
+	margin: auto;
+	width: 600px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}

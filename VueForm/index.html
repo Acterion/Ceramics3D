@@ -1,0 +1,24 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<html>
+<div class='container'>
+    <custom-form :fields="fields" url='handler.php' action="ping">
+
+    </custom-form>
+</div>
+<template id='custom-form'>
+  <div id = "form-container">
+  	<form v-on:submit="sendForm">
+	    <div id = 'input-container' v-for = 'field in this.fields'>
+			<input v-if="field.tag=='input'" :type = "field.type" :placeholder = "field.placeholder" :id="field.id" :class="field.class" :value = "field.value" v-model="field.value" >
+			<button v-if="field.tag=='button'" :id="field.id" :class="field.class" :v-model="field.value">{{field.text}}</button>
+			<textarea v-if="field.tag=='textarea'" :placeholder = "field.placeholder" :id="field.id" :class="field.class" v-model="field.value">{{field.text}}</textarea>
+	    </div>
+  	</form>
+  </div>
+</template>
+</html>
+<script type="text/javascript" src="script.js"></script>
+
